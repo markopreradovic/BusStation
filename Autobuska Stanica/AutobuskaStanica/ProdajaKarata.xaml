@@ -1,0 +1,208 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:AutobuskaStanica"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+    x:Class="AutobuskaStanica.ProdajaKarata"
+    mc:Ignorable="d" 
+    d:DesignHeight="1100" d:DesignWidth="1470" 
+    Title="{DynamicResource IzdajKartu}">
+
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{DynamicResource ApplicationFont}" />
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ListView Name="lstRoutes" VerticalAlignment="Stretch"  Grid.Column="0"  
+          ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+          ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding RutaObj}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="{DynamicResource ID}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding RutaID}" TextAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="{DynamicResource Ruta}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Ruta}" TextAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="{DynamicResource Vrijemepolaska}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding VrijemePolaska}" TextAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="{DynamicResource DaniPolaska}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Dani}" TextAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="{DynamicResource MjestoDolaska}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding MjestoDolaska}" TextAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="{DynamicResource Cijena}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Cijena}" TextAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="{DynamicResource Autoprevoznik}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NazivAutoprevoznika}" TextAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="{DynamicResource BusID}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding BusID}" TextAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="{DynamicResource VozacID}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding VozacID}" TextAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300">
+            <TextBlock Text="{DynamicResource Filter}" FontWeight="Bold" FontSize="18" Margin="0,0,0,10"/>
+
+            <TextBox Name="tbMjestoDolaska" Text="{DynamicResource MjestoDolaskaPlaceholder}" 
+             Width="250" 
+             Margin="0,0,0,20" 
+             Foreground="Gray"
+             GotFocus="TextBox_GotFocus" 
+             LostFocus="TextBox_LostFocus"
+             PreviewTextInput="TextBox_PreviewTextInput"
+             HorizontalAlignment="Left" TextChanged="tbMjestoDolaska_TextChanged"/>
+
+            <TextBox Name="tbVrijemePolaska" Text="{DynamicResource VrijemePolaskaPlaceholder}" 
+             Width="250" 
+             Margin="0,0,0,20" 
+             Foreground="Gray"
+             GotFocus="TextBox_GotFocus" 
+             LostFocus="TextBox_LostFocus"
+             PreviewTextInput="TextBox_PreviewNumericInput"
+             HorizontalAlignment="Left" TextChanged="tbVrijemePolaska_TextChanged"/>
+
+            <TextBlock Text="{DynamicResource TipKarte}" FontWeight="Bold" FontSize="16" Margin="0,20,0,10"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <RadioButton Name="jednosmjerna"  Content="{DynamicResource Jednosmjerna}" Margin="0,0,20,0" FontSize="14"/>
+                <RadioButton Name="povratna"  Content="{DynamicResource Povratna}" FontSize="14"/>
+            </StackPanel>
+
+            <TextBlock Text="{DynamicResource Popust}" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+            <ComboBox Name="cbPopust" Width="250" Margin="0,0,0,20" HorizontalAlignment="Left">
+                <ComboBoxItem Content="{DynamicResource Student20}" />
+                <ComboBoxItem Content="{DynamicResource Penzioner25}" />
+                <ComboBoxItem Content="{DynamicResource Ucenik15}" />
+                <ComboBoxItem Content="{DynamicResource BezPopusta}"/>
+            </ComboBox>
+
+            <TextBlock Text="{DynamicResource DatumPolaska}" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+            <DatePicker Name="dpDatum" Width="250" Margin="0,0,0,20" HorizontalAlignment="Left"/>
+
+            <TextBox Name="txtIme" Text="{DynamicResource ImePlaceholder}" 
+             Width="250" 
+             Margin="0,0,0,20" 
+             Foreground="Gray"
+             GotFocus="TextBox_GotFocus" 
+             LostFocus="TextBox_LostFocus"
+             HorizontalAlignment="Left"
+             PreviewTextInput="TextBox_PreviewTextInput"/>
+            <TextBox Name="txtPrezime" Text="{DynamicResource PrezimePlaceholder}" 
+             Width="250" 
+             Margin="0,0,0,20" 
+             Foreground="Gray"
+             GotFocus="TextBox_GotFocus" 
+             LostFocus="TextBox_LostFocus"
+             PreviewTextInput="TextBox_PreviewTextInput"
+             HorizontalAlignment="Left"/>
+            <TextBox Name="txtKontakt" Text="{DynamicResource KontaktPlaceholder}" 
+             Width="250" 
+             Margin="0,0,0,20" 
+             Foreground="Gray"
+             GotFocus="TextBox_GotFocus" 
+             LostFocus="TextBox_LostFocus"
+             PreviewTextInput="TextBox_PreviewNumericInput"
+             HorizontalAlignment="Left"/>
+
+            <TextBox Name="tbPeron" Text="{DynamicResource PeronPlaceholder}" 
+             Width="250" 
+             Margin="0,0,0,20" 
+             Foreground="Gray"
+             GotFocus="TextBox_GotFocus" 
+             LostFocus="TextBox_LostFocus"
+             PreviewTextInput="TextBox_PreviewNumericInput"
+             HorizontalAlignment="Left"/>
+
+            <Button Content="{DynamicResource IzdajKartu}" 
+            Width="250" 
+            Height="40" 
+            Style="{StaticResource MaterialDesignRaisedButton}" 
+            Margin="0,20,0,0"
+            HorizontalAlignment="Left" Click="Button_Click"/>
+
+            <TextBlock Text="{DynamicResource StorniranjeKarte}" FontWeight="Bold" FontSize="18" Margin="0,30,0,10"/>
+            <TextBox Name="tbStornirajID" Text="{DynamicResource IDKartePlaceholder}" 
+             Width="250" 
+             Margin="0,0,0,20" 
+             Foreground="Gray"
+             GotFocus="TextBox_GotFocus" 
+             LostFocus="TextBox_LostFocus"
+             PreviewTextInput="TextBox_PreviewNumericInput"
+             HorizontalAlignment="Left"/>
+            <Button Content="{DynamicResource Storniraj}" 
+            Width="250" 
+            Height="40" 
+            Style="{StaticResource MaterialDesignRaisedButton}" 
+            Margin="0,20,0,0"
+            HorizontalAlignment="Left" Click="ButtonStorniraj_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
+

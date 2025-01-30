@@ -1,0 +1,117 @@
+﻿<Page x:Class="AutobuskaStanica.Stanice"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+      xmlns:local="clr-namespace:AutobuskaStanica"
+      mc:Ignorable="d"
+      d:DesignHeight="1100" d:DesignWidth="1450"
+      Title="Stanice">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="800" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ListView Name="lstStanice" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+          ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="StanicaID" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding StanicaID}" TextAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Naziv Stanice" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NazivStanice}" TextAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Mjesto" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Mjesto}" TextAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Broj Perona" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding BrojPerona}" TextAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Adresa" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Adresa}" TextAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Kontakt" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Kontakt}" TextAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300">
+           
+            <TextBlock Text="Dodavanje Stanice" FontWeight="Bold" FontSize="18" Margin="0,0,0,10" />
+
+            <TextBox Name="tbNazivStanice" 
+                     materialDesign:HintAssist.Hint="Naziv Stanice" 
+                     Width="250" Margin="0,0,0,10" 
+                     PreviewTextInput="TextBox_PreviewAlphaInput"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+            <TextBox Name="tbMjesto" 
+                     materialDesign:HintAssist.Hint="Mjesto" 
+                     Width="250" Margin="0,0,0,10" 
+                     PreviewTextInput="TextBox_PreviewAlphaInput"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+            <TextBox Name="tbBrojPerona" 
+                     materialDesign:HintAssist.Hint="Broj Perona" 
+                     Width="250" Margin="0,0,0,10" 
+                     PreviewTextInput="TextBox_PreviewNumericInput"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+            <TextBox Name="tbAdresa" 
+                     materialDesign:HintAssist.Hint="Adresa" 
+                     Width="250" Margin="0,0,0,10" 
+                     PreviewTextInput="TextBox_PreviewAlphanumericInput"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+            <TextBox Name="tbKontakt" 
+                     materialDesign:HintAssist.Hint="Kontakt" 
+                     PreviewTextInput="TextBox_PreviewNumericInput"
+                     Width="250" Margin="0,0,0,10" 
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+            <Button Content="Dodaj Stanicu" Width="250" Height="40" Margin="0,20,0,10" 
+                    Style="{StaticResource MaterialDesignRaisedButton}" 
+                    Click="AddStanica_Click" />
+
+            <Button Content="Obriši Stanicu" Width="250" Height="40" Margin="0,10,0,0" 
+                    Style="{StaticResource MaterialDesignRaisedButton}" 
+                    Click="DeleteStanica_Click" />
+        </StackPanel>
+    </Grid>
+</Page>

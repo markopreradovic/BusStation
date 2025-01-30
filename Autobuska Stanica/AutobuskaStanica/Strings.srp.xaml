@@ -1,0 +1,77 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="Title">RadnikMain</system:String>
+    <system:String x:Key="ProdajaKarata">Prodaja Karata</system:String>
+    <system:String x:Key="IzdateKarte">Izdate Karte</system:String>
+    <system:String x:Key="Putnici">Putnici</system:String>
+    <system:String x:Key="Pomoć">Pomoć</system:String>
+    <system:String x:Key="Podesavanja">   Podešavanja</system:String>
+    <system:String x:Key="Font">Font:</system:String>
+    <system:String x:Key="Tema">Tema:</system:String>
+    <system:String x:Key="Jezik">Jezik:</system:String>
+    <system:String x:Key="Odjava">Odjava</system:String>
+    <system:String x:Key="Svijetla">Svijetla</system:String>
+    <system:String x:Key="Tamna">Tamna</system:String>
+    <system:String x:Key="Plava">Plava</system:String>
+    <system:String x:Key="Engleski">Engleski</system:String>
+    <system:String x:Key="Srpski">Srpski</system:String>
+    
+    <system:String x:Key="ID">ID</system:String>
+    <system:String x:Key="Ruta">   Ruta</system:String>
+    <system:String x:Key="Vrijemepolaska">Vrijeme Polaska</system:String>
+    <system:String x:Key="DaniPolaska">Dani Polaska</system:String>
+    <system:String x:Key="MjestoDolaska">Mjesto Dolaska</system:String>
+    <system:String x:Key="Cijena">Cijena</system:String>
+    <system:String x:Key="Autoprevoznik">Autoprevoznik</system:String>
+    <system:String x:Key="BusID">Bus ID</system:String>
+    <system:String x:Key="VozacID">Vozač ID</system:String>
+    
+    
+    <system:String x:Key="Filter">Filter</system:String>
+    <system:String x:Key="MjestoDolaskaPlaceholder">Mjesto Dolaska</system:String>
+    <system:String x:Key="VrijemePolaskaPlaceholder">Vrijeme Polaska</system:String>
+    <system:String x:Key="TipKarte">Tip karte</system:String>
+    <system:String x:Key="Jednosmjerna">Jednosmjerna</system:String>
+    <system:String x:Key="Povratna">Povratna</system:String>
+    <system:String x:Key="Popust">Popust</system:String>
+    <system:String x:Key="Student20">Student 20%</system:String>
+    <system:String x:Key="Penzioner25">Penzioner 25%</system:String>
+    <system:String x:Key="Ucenik15">Učenik 15%</system:String>
+    <system:String x:Key="BezPopusta">Bez Popusta</system:String>
+    <system:String x:Key="DatumPolaska">Datum polaska</system:String>
+    <system:String x:Key="ImePlaceholder">Ime</system:String>
+    <system:String x:Key="PrezimePlaceholder">Prezime</system:String>
+    <system:String x:Key="KontaktPlaceholder">Kontakt</system:String>
+    <system:String x:Key="PeronPlaceholder">Peron</system:String>
+    <system:String x:Key="IzdajKartu">Izdaj kartu</system:String>
+    <system:String x:Key="StorniranjeKarte">Storniranje karte</system:String>
+    <system:String x:Key="IDKartePlaceholder">ID Karte</system:String>
+    <system:String x:Key="Storniraj">Storniraj</system:String>
+
+    <system:String x:Key="KartaID">Karta ID</system:String>
+    <system:String x:Key="NazivAutoprevoznika">Naziv Autoprevoznika</system:String>
+    <system:String x:Key="VrijemeIzdavanja">Vrijeme Izdavanja</system:String>
+    <system:String x:Key="PrikazKarata">Prikaz Karata</system:String>
+    <system:String x:Key="SviRadnici">Svi Radnici</system:String>
+    <system:String x:Key="PrijavljeniRadnik">Prijavljeni Radnik</system:String>
+    <system:String x:Key="VrijemePolaska">Vrijeme Polaska</system:String>
+
+    <system:String x:Key="PutniciTitle">Putnici</system:String>
+    <system:String x:Key="IDHeader">ID</system:String>
+    <system:String x:Key="ImeHeader">Ime</system:String>
+    <system:String x:Key="PrezimeHeader">Prezime</system:String>
+    <system:String x:Key="KontaktHeader">Kontakt</system:String>
+    <system:String x:Key="RadnikIDHeader">Radnik ID</system:String>
+    <system:String x:Key="KartaIDHeader">Karta ID</system:String>
+    <system:String x:Key="BusIDHeader">Bus ID</system:String>
+    <system:String x:Key="AutoprevoznikHeader">Autoprevoznik</system:String>
+    <system:String x:Key="VozacIDHeader">Vozac ID</system:String>
+    <system:String x:Key="KondukterIDHeader">Kondukter ID</system:String>
+    <system:String x:Key="FilterHeader">Filter</system:String>
+    <system:String x:Key="KartaIDPlaceholder">KartaID</system:String>
+    <system:String x:Key="DeletePassengerButton">Obriši putnika</system:String>
+    
+    
+</ResourceDictionary>
